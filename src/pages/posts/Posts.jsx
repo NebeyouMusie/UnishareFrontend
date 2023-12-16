@@ -9,7 +9,7 @@ const fetcher = url => axios.get(url).then(res => res.data);
 
 const Posts = () => {
 
-  const {data, error, isLoading} = useSWR('https://unishare-1.vercel.app/api/post/get', fetcher);
+  const {data, error, isLoading} = useSWR('https://unishare-backend.vercel.app/api/post/get', fetcher);
   const {user} = useGlobalContext();
   let posts = data?.data.filter((post) => {
     return post.username === user.others.name;
@@ -44,7 +44,7 @@ const Posts = () => {
       e.preventDefault();
 
       try{
-        const response = await axios.post('https://unishare-1.vercel.app/api/post/add', {
+        const response = await axios.post('https://unishare-backend.vercel.app/api/post/add', {
           title,
           description,
           postType,
@@ -61,7 +61,7 @@ const Posts = () => {
         setErrorMessage(""); // Clear any previous error messages
         setTitle("");
         setDescription("");
-        mutate('https://unishare-1.vercel.app/api/post/get');
+        mutate('https://unishare-backend.vercel.app/api/post/get');
       } catch(err) {
         setPostMessage(true);
         if (err.response) {
