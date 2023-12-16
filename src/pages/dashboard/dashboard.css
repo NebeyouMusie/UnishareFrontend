@@ -1,0 +1,35 @@
+.dashboard{
+    height: calc(100dvh - 65px);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-rows: repeat(auto-fit, minmax(1fr, 200px));
+    gap: 2rem;
+    /* border-top-left-radius: 0.5rem; */
+    border-radius: 0.5rem;
+    background: #BEE9E8;
+    padding: 2rem;
+}
+.receivedAssignmentsCard{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #C14E4E;
+  height: 200px;
+  border-radius: 0.5rem;
+}
+.receivedText{
+  color: white;
+}
+.yourPostsCard{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #BB9F06;
+  height: 200px;
+  border-radius: 0.5rem;
+}
+.postsText{
+  color: white;
+}

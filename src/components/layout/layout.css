@@ -1,0 +1,8 @@
+.layout{
+  display: flex;
+}
+.rightContents{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}

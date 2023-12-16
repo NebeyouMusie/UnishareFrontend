@@ -1,0 +1,214 @@
+.posts{
+  height: calc(100dvh - 65px);
+  display: flex;
+  /* border-top-left-radius: 0.5rem; */
+  border-radius: 0.5rem;
+  align-items: center;
+  background: #BEE9E8;
+  padding: 2rem;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.recentPosts{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  height: calc(100dvh - 130px);
+  background: #1D7163;
+  width: 50%;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow: scroll;
+}
+.noPostMessage{
+  margin: auto;
+  color: white;
+  text-align: center;
+}
+.postCard{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  background: #43C59E;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.topContent{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.postType{
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+}
+.posttime{
+  color: whitesmoke;
+  font-size: 0.7rem;
+}
+.postTitle{
+  color: white;
+  font-weight: 500;
+  font-size: 0.85rem;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.postDescription{
+  color: white;
+  font-size: 0.75rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.postForm{
+  height: calc(100dvh - 130px);
+  background: #1D7163;
+  width: 50%;
+  border-radius: 0.5rem;
+  /* padding: 2rem; */
+  position: relative;
+  overflow: scroll;
+}
+.postMessage{
+  /* position: absolute;
+  top: 0; */
+  text-align: center;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 0.5rem;
+  background: green;
+  display: none;
+  transition: all 0.3s linear;
+}
+.postMessage.displayPostMessage{
+  display: block;
+}
+.postForm > form{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+}
+.postTitle, .postDesc{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.postTitle > p, .postDesc > p, .postDueDate > p, .postFile > p{
+  color: white;
+  font-weight: 500;
+}
+.postTitle > input, .postDesc > textarea, .postDueDate > input{
+  max-width: 100%;
+  width: 100%;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.postDesc > textarea{
+  max-height: 150px;
+}
+.postDueDate{
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.postFile{
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.chooseFile{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.chooseFile > label > i{
+  font-size: 1.8rem;
+  color: #BB9F06;
+  cursor: pointer;
+}
+.chooseFile > select{
+  max-width: 100%;
+  width: 100%;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+.postButton{
+  align-self: center;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  background: #BB9F06;
+  color: white;
+  cursor: pointer;
+}
+
+/*
+POST DETAILS
+*/
+.postDetail{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  padding: 2rem;
+}
+.postDetails{
+  display: flex;
+  flex-direction: column;
+}
+.selectedPostTitle{
+  color: white;
+  font-size: 2rem;
+}
+.selectedPostType, .selectedPostTime{
+  color: whitesmoke;
+  font-size: 0.9rem;
+}
+.selectedPostTime{
+  margin-top: 0.5rem;
+}
+
+.selectedPostDescription{
+  margin-top: 2rem;
+  color: whitesmoke;
+}
+.returnButton{
+  align-self: center;
+  padding: 0.5rem 1.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  margin-top: 2rem;
+  background: #BB9F06;
+  color: white;
+  cursor: pointer;
+}
+
+@media(max-width: 50em){
+  .posts{
+    flex-direction: column;
+  }
+  .recentPosts{
+    width: 100%;
+  }
+  .postForm{
+    width: 100%;
+  }
+}

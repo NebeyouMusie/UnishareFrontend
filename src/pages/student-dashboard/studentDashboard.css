@@ -1,0 +1,33 @@
+.studentDashboardContainer{
+  height: calc(100vh - 65px);
+  background: #BEE9E8;
+  border-radius: 0.5rem;
+  padding: 2rem;
+}
+
+.studentDashboard{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-rows: repeat(auto-fit, minmax(1fr, 200px));
+  gap: 2rem;
+}
+
+.announcementsCard, .assignmentsCard, .resourcesCard{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  color: white;
+  border-radius: 0.5rem;
+  min-height: 150px;
+}
+.announcementsCard{
+  background: #BB9F06;
+}
+.assignmentsCard{
+  background: #333D29;
+}
+.resourcesCard{
+  background: #C14E4E;
+}

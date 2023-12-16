@@ -1,0 +1,25 @@
+.navbar{
+  height: 60px;
+  padding: 2rem 3rem 2rem 2rem;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0D354B;
+}
+.productName{
+  color: #7BF6F3;
+}
+.aboutAndIcon{
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.aboutLink{
+  color: white;
+}
+.userIcon{
+  font-size: 1.7rem;
+  color: #7BF6F3;
+  cursor: pointer;
+}

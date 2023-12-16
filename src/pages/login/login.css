@@ -1,0 +1,100 @@
+.login{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media(min-width: 40em){
+  .login{
+    flex-direction: row;
+  }
+}
+.unishareDescription{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #022031;
+  width: 100%;
+  height: 100dvh;
+}
+.descriptionContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  text-align: center;
+  /* background: red; */
+  width: 90%;
+}
+.introduction{
+  font-size: 4rem;
+  color: #7BF6F3;
+}
+.text{
+  color: #7BF6F3;
+}
+.descText{
+  color: whitesmoke;
+}
+.unishareLoginForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #1D7163;
+  width: 100%;
+  height: 70dvh;
+}
+@media(min-width: 40em){
+  .unishareLoginForm{
+    height: 100dvh;
+  }
+}
+.loginContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  text-align: center;
+  background: #43C59E;
+  width: 90%;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  max-width: 500px;
+}
+.loginText{
+  color: #022031;
+  font-size: 2.5rem;
+}
+.loginForm{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.loginForm > input{
+  align-self: center;
+  max-width: 400px;
+  text-indent: 0.7rem;
+  padding: 1rem 0.5rem 1rem 0rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+}
+.loginForm > input:focus{
+  outline-color: #43C59E;
+}
+.loginForm > button{
+  width: max-content;
+  align-self: center;
+  margin-top: 20px;
+  padding: 0.5rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  border: none;
+  background: #022031;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all linear 0.15s;
+}
