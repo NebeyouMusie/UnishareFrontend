@@ -29,7 +29,7 @@ const Sidebar = () => {
             style={({isActive}) => isActive ? style : null}
             >Dashboard</NavLink>
           <NavLink
-            to={`${user.others.role === "instructor" ? '/received' : '/notifications'}`}
+            to={`${user.others.role === "instructor" ? '/received' : 'notifications'}`}
             style={({isActive}) => isActive ? style : null}
             className='navigationBtn'
           >{`${user.others.role === "instructor" ? "Received" : "Notifications"}`}</NavLink>

@@ -1,10 +1,16 @@
-import { Link } from 'react-router-dom'
+import { Link, NavLink } from 'react-router-dom'
 import './navbar.css'
 
 const Navbar = () => {
+  const styles = {
+    color: '#7BF6F3'
+  }
+
   return (
     <div className='navbar'>
-      <h1 className='productName'>Unishare.</h1>
+      <Link to='/'>
+        <h1 className='productName'>Unishare.</h1>
+      </Link>
       {/* <div className='searchBar'>
         <input type="text" className='searchInput'/>
         <button className='searchBtn'>
@@ -12,7 +18,11 @@ const Navbar = () => {
         </button>
       </div> */}
       <div className='aboutAndIcon'>
-        <Link to="/about" className='aboutLink'>About</Link>
+        <NavLink 
+          to="/about" 
+          className='aboutLink'
+          style={({isActive}) => isActive ? styles : {}}
+          >About</NavLink>
         <i className="userIcon fa-solid fa-circle-user"></i>
       </div>
     </div>

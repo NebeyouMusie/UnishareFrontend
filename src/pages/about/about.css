@@ -1,0 +1,63 @@
+.about{
+  height: calc(100dvh - 65px);
+  border-radius: 0.5rem;
+  align-items: center;
+  background: #BEE9E8;
+  padding: 2rem;
+  justify-content: space-between;
+  gap: 1rem;
+  overflow: scroll;
+}
+.aboutContainer{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.aboutContent{
+  margin-top: 4rem;
+  text-align: justify;
+  z-index: 100;
+}
+.welcomeMessage{
+  text-align: center;
+  color: #1D7163;
+  font-size: 3rem;
+}
+.what{
+  margin-top: 0rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.mission{
+  margin: 1rem 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.join{
+  margin: 1rem 0;
+}
+.image{
+  width: 500px;
+  height: 500px;
+  object-fit: cover;
+  overflow: visible;
+  z-index: -1;
+}
+.unishare > span{
+  font-weight: 600;
+}
+
+@media(max-width: 50em){
+  .aboutContainer{
+    flex-direction: column;
+  }
+  .aboutContent{
+    margin-top: 1rem;
+    text-align: justify;
+  }
+  .image{
+    width: 350px;
+    height: auto;
+  }
+}

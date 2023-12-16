@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: space-between;
 }
-@media(min-width: 40em){
+@media(min-width: 50em){
   .login{
     flex-direction: row;
   }

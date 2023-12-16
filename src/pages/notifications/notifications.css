@@ -131,12 +131,16 @@
   -webkit-box-orient: vertical;
 }
 .notificationForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: calc(100dvh - 130px);
   background: #1D7163;
   width: 50%;
   border-radius: 0.5rem;
   /* padding: 2rem; */
   position: relative;
+  overflow: scroll;
 }
 .notificationMessage{
   /* position: absolute;
@@ -211,7 +215,6 @@ POST DETAILS
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  overflow: scroll;
   height: 100%;
   padding: 2rem;
 }
@@ -245,6 +248,10 @@ POST DETAILS
   background: #BB9F06;
   color: white;
   cursor: pointer;
+}
+.clickMessage{
+  text-align: center;
+  color: white;
 }
 
 @media(max-width: 50em){

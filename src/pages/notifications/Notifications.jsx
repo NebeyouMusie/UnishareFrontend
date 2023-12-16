@@ -19,7 +19,7 @@ const Notifications = () => {
   const [selectedPostId, setSelectedPostId] = useState(null);
   const selectedPost = posts?.find(post => post._id === selectedPostId);
 
-
+  console.log(selectedPost);
   const handleSubmit = async (e) => {
   
       e.preventDefault();
@@ -79,22 +79,23 @@ const Notifications = () => {
         
         {
         showPostDescription 
-            &&
+            ?
         ( <div className='notificationDetail'>
-           {selectedPost && (
-            <>
-              <div className='notificationDetails'>
+           {selectedPost &&
+            
+              (<div className='notificationDetails'>
                 <h2 className='selectedNotificationTitle'>{selectedPost.title}</h2>
                 <p className='selectedNotificationType'>Type: {selectedPost.postType}</p>
                 <p className='selectedNotificationTime'>Posted: {moment(selectedPost.createdAt).fromNow()}</p>
                 <p className='selectedNotificationTime'>Course: {selectedPost.course}</p>
                 <p className='selectedNotificationDescription'>Description: {selectedPost.description}</p>
                 {/* Add more details as needed */}
-              </div>
+              </div>)
               
-            </>
-          )}
-      </div>) 
+           }
+      </div>) : 
+
+    (<h1 className='clickMessage'>Click one of the notification cards to see more</h1>)
        
       }
 
