@@ -3,16 +3,23 @@
   background: #BEE9E8;
   border-radius: 0.5rem;
   padding: 2rem;
+  overflow: scroll;
 }
 
 .studentDashboard{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   grid-template-rows: repeat(auto-fit, minmax(1fr, 200px));
   gap: 2rem;
 }
 
-.announcementsCard, .assignmentsCard, .resourcesCard{
+@media(max-width: 50em){
+  .studentDashboard{
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+.announcementsCard, .assignmentsCard, .resourcesCard, .scoresCard{
   display: flex;
   align-items: center;
   justify-content: center;
@@ -30,4 +37,8 @@
 }
 .resourcesCard{
   background: #C14E4E;
+}
+
+.scoresCard{
+  background: #29be67;
 }

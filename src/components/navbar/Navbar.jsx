@@ -1,16 +1,24 @@
 import { Link, NavLink } from 'react-router-dom'
 import './navbar.css'
+import { useGlobalContext } from '../../context/context'
 
 const Navbar = () => {
+  const {handleSidebar, hideSidebar} = useGlobalContext();
   const styles = {
     color: '#7BF6F3'
   }
 
   return (
     <div className='navbar'>
-      <Link to='/'>
-        <h1 className='productName'>Unishare.</h1>
-      </Link>
+      <div className='barContent'>
+        <i 
+          className="fa-solid fa-bars"
+          onClick={handleSidebar}
+          ></i>
+        <Link to='/' onClick={hideSidebar}>
+          <h1 className='productName'>Unishare.</h1>
+        </Link>
+      </div>
       {/* <div className='searchBar'>
         <input type="text" className='searchInput'/>
         <button className='searchBtn'>
@@ -22,8 +30,11 @@ const Navbar = () => {
           to="/about" 
           className='aboutLink'
           style={({isActive}) => isActive ? styles : {}}
+          onClick={hideSidebar}
           >About</NavLink>
-        <i className="userIcon fa-solid fa-circle-user"></i>
+        <Link to="/profile"  onClick={hideSidebar}>
+          <i className="userIcon fa-solid fa-circle-user"></i>
+        </Link>
       </div>
     </div>
   )

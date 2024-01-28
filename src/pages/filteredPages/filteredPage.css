@@ -1,4 +1,4 @@
-.posts{
+.notifications{
   height: calc(100dvh - 65px);
   display: flex;
   /* border-top-left-radius: 0.5rem; */
@@ -9,7 +9,7 @@
   justify-content: space-between;
   gap: 1rem;
 }
-.recentPosts{
+.recentNotifications{
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -20,12 +20,79 @@
   padding: 1rem;
   overflow: scroll;
 }
-.noPostMessage{
+.noNotificationsMessage{
   margin: auto;
   color: white;
   text-align: center;
 }
-.postCard{
+.resultDisplayMessage{
+  margin: auto;
+  color: white;
+  text-align: center;
+}
+.filterSystem{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.searchForm{
+  display: flex;
+}
+.searchBar{
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 0.5rem;
+}
+.searchInput{
+  padding: 0.7rem 1rem;
+  border-radius: 0.5rem;
+  /* width: 100%; */
+  width: 300px;
+  /* outline-color: #14453D; */
+  outline: none;
+  border: none;
+}
+.searchButton{
+  background: white;
+  border: none;
+  padding: 0.5rem 0;
+  border-radius: 0.5rem;
+  align-self: center;
+  justify-self: center;
+  cursor: pointer;
+  margin-left: -2rem;
+}
+.searchButton i{
+  font-size: 1rem; 
+}
+.filterButtons{
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+@media(max-width: 50em){
+  .filterButtons{
+    grid-template-columns: repeat(2, 1fr);
+    place-items: center;
+  }
+}
+.filterButtons > button{
+  width: max-content;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  border: none;
+  background: #14453D;
+  color: white;
+  cursor: pointer;
+}
+.filterButtons > button.selected{
+  background: #BB9F06;
+}
+.notificationCard{
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -38,16 +105,21 @@
   justify-content: space-between;
   align-items: center;
 }
-.postType{
+.notificationType{
   color: white;
   font-weight: 600;
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
-.posttime{
+.notificationCourseName{
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+.notificationTime{
   color: whitesmoke;
   font-size: 0.7rem;
 }
-.postTitle{
+.notificationTitle{
   color: white;
   font-weight: 500;
   font-size: 0.85rem;
@@ -58,7 +130,7 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-.postDescription{
+.notificationDescription{
   color: white;
   font-size: 0.75rem;
   overflow: hidden;
@@ -67,13 +139,10 @@
   -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
-
-.postEditedText {
-  color: rgb(0, 0, 0);
-  font-size: 0.8rem;
-  text-align: right;
-}
-.postForm{
+.notificationForm{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   height: calc(100dvh - 130px);
   background: #1D7163;
   width: 50%;
@@ -82,7 +151,7 @@
   position: relative;
   overflow: scroll;
 }
-.postMessage{
+.notificationMessage{
   /* position: absolute;
   top: 0; */
   text-align: center;
@@ -95,31 +164,15 @@
   display: none;
   transition: all 0.3s linear;
 }
-.postMessage.displayPostMessage{
-  display: block;
-}
-.postForm > form{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 2rem;
-}
-.postTitle, .postDesc{
+
+
+.notificationTitle, .notificationDesc{
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.postTitle > p, .postDesc > p, .postDueDate > p, .postFile > p{
-  color: white;
-  font-weight: 500;
-}
-.postTitle > input, .postDesc > textarea, .postDueDate > input{
-  max-width: 100%;
-  width: 100%;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-}
+
+
 .postDesc > textarea{
   max-height: 150px;
 }
@@ -127,19 +180,6 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-.uploadProgress{
-  color: #ebebeb;
-  margin-top: 1rem;
-  text-align: center;
-  /* background: #c300ff; */
-  width: max-content;
-  align-self: center;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-}
-.uploadProgress > p{
-  color: #ffffff;
 }
 .postFile{
   margin-top: 1rem;
@@ -164,7 +204,6 @@
   border: none;
   padding: 0.5rem 1rem;
   border-radius: 0.5rem;
-  cursor: pointer;
 }
 .postButton{
   align-self: center;
@@ -181,62 +220,30 @@
 /*
 POST DETAILS
 */
-.postDetail{
+.notificationDetail{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
   padding: 2rem;
 }
-.postDetails{
+.notificationDetails{
   display: flex;
   flex-direction: column;
 }
-.selectedPostTopContent{
-  display: flex;
-  justify-content: space-between;
-}
-.editPost{
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 5px;
-  align-self: center;
-  padding: 0.5rem 1.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  font-weight: 500;
-  background: #BB9F06;
-  color: white;
-  cursor: pointer;
-}
-.editPost > i{
-  font-size: 1.1rem;
-  color: #1D7163;
-}
-.selectedPostTitle{
+.selectedNotificationTitle{
   color: white;
   font-size: 2rem;
 }
-.selectedPostType, .selectedPostTime{
+.selectedNotificationType, .selectedNotificationTime{
   color: whitesmoke;
   font-size: 0.9rem;
 }
-.selectedPostTime{
+.selectedNotificationTime{
   margin-top: 0.5rem;
 }
 
-.postDetailEditedText{
-  color: rgb(199, 193, 193);
-  font-size: 0.85rem;
-}
-.selectedPostDueDate{
-  margin-top: 0.5rem;
-  color: whitesmoke;
-  font-size: 0.9rem;
-}
-
-.selectedPostDescription{
+.selectedNotificationDescription{
   margin-top: 2rem;
   color: whitesmoke;
 }
@@ -251,15 +258,19 @@ POST DETAILS
   color: white;
   cursor: pointer;
 }
+.clickMessage{
+  text-align: center;
+  color: white;
+}
 
 @media(max-width: 50em){
-  .posts{
+  .notifications{
     flex-direction: column;
   }
-  .recentPosts{
+  .recentNotifications{
     width: 100%;
   }
-  .postForm{
+  .notificationForm{
     width: 100%;
   }
 }

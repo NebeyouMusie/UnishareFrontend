@@ -1,4 +1,4 @@
-import { createContext, useContext, useEffect, useReducer } from "react"
+import { createContext, useContext, useEffect, useReducer, useState } from "react"
 import reducer from "./reducer";
 
 
@@ -12,7 +12,15 @@ export const ContextProvider = ({children}) => {
     error: false,
   };
   const [state, dispatch] = useReducer(reducer, INITIAL_STATE);
+  const [showSidebar, setShowSidebar] = useState(true);
 
+  const handleSidebar = () => {
+    setShowSidebar(!showSidebar);
+  }
+
+  const hideSidebar = () => {
+    setShowSidebar(false);
+  }
   const LoginStart = (userCredentials) => {
     dispatch({ type: "LOGIN_START" })
   };
@@ -64,7 +72,10 @@ export const ContextProvider = ({children}) => {
       UpdateStart,
       UpdateFailure,
       UpdateSuccess,
-      DeleteUser
+      DeleteUser,
+      showSidebar,
+      handleSidebar,
+      hideSidebar
     }
       }>
       {children}

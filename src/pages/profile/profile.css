@@ -1,0 +1,103 @@
+.profile{
+  height: calc(100dvh - 65px);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #BEE9E8;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+.profileContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  text-align: center;
+  background: #43C59E;
+  width: 100%;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  max-width: 500px;
+}
+.profileText{
+  color: #022031;
+  font-size: 2.5rem;
+}
+.profileForm{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.profileForm > label{
+  color: #022031;
+  font-weight: 600;
+  align-self: flex-start;
+}
+.profileForm > input{
+  align-self: flex-start;
+  max-width: 400px;
+  text-indent: 0.7rem;
+  padding: 1rem 0.5rem 1rem 0rem;
+  width: 100%;
+  border: none;
+  border-radius: 0.5rem;
+}
+.profileForm > input:focus{
+  outline-color: #43C59E;
+}
+.changePassword{
+  font-size: 0.8rem;
+  color: #022031;
+  text-decoration: underline;
+  cursor: pointer;
+}
+.changePassword:hover{
+  color: rgb(39, 75, 39);
+}
+.profileForm > button{
+  width: max-content;
+  align-self: center;
+  margin-top: 20px;
+  padding: 0.5rem 1.5rem;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  border: none;
+  background: #022031;
+  color: white;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all linear 0.15s;
+}
+.profileForm > button:hover{
+  color: white;
+  background: #BB9F06;
+}
+
+.profileImageContainer{
+  width: 50%;
+}
+.profileImage{
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+@media(max-width: 50em){
+  .profile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+  .profileContainer{
+    width: 100%;
+  }
+  .profileImageContainer{
+    display: none;
+  }
+}

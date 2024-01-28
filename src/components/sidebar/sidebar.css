@@ -3,14 +3,36 @@
   top: 0;
   bottom: 0;
   left: 0; */
-  width: 300px;
+  width: 80%;
+  max-width: 250px;
   background: #0D354B;
-  height: 100dvh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 2rem 1rem;
+  z-index: 1000;
+}
+
+@media(max-width: 50em){
+  .sidebar{
+    display: none;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+  }
+  .sidebar.show {
+    display: flex; /* Use flex to maintain the internal flex layout */
+    width: 70%; /* Set the sidebar to take up the full width */
+    position: fixed; /* Fix the sidebar to the viewport */
+    top: 0;
+    left: 0;
+    height: 100vh; /* Ensure it takes the full height */
+    z-index: 1000; /* Make sure it's above other content */
+    transform: translateX(0);
+    transition: transform 0.3s ease-in-out;
+  }
 }
 .logoAndText{
   display: flex;
@@ -35,6 +57,10 @@
   gap: 1rem;
 }
 .navigationBtn{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
   width: 200px;
   color: #0D354B;
   font-weight: 500;
@@ -42,6 +68,18 @@
   padding: 0.5rem 2rem;
   text-align: center;
   border-radius: 0.5rem;
+}
+.notificationCount{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: red;
+  width: 20px;
+  height: 20px;
+  border-radius: 1rem;
+  font-size: 0.75rem;
+  color: white;
+  font-weight: 500;
 }
 /* .logoutButton{
   border: none;
