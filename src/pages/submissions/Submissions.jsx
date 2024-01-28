@@ -31,11 +31,11 @@ const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 const Submissions = () => {
   const { data, error, isLoading } = useSWR(
-    "http://localhost:5000/api/assignment/getAssignment",
+    "https://unishare-backend.vercel.app/api/assignment/getAssignment",
     fetcher
   ); // https://unishare-backend.vercel.app/api/post/get
   const { data: instructorPost } = useSWR(
-    "http://localhost:5000/api/post/get",
+    "https://unishare-backend.vercel.app/api/post/get", //http://localhost:5000/
     fetcher
   );
 
@@ -197,7 +197,7 @@ const Submissions = () => {
 
                 // Store the download URL in your MongoDB database
                 const response = await axios.put(
-                  `http://localhost:5000/api/assignment/EditAssignment/${selectedPostId}`, // Replace with your actual update endpoint
+                  `https://unishare-backend.vercel.app/api/assignment/EditAssignment/${selectedPostId}`, // Replace with your actual update endpoint
                   {
                     course: courseName,
                     file: downloadURL,
@@ -214,7 +214,7 @@ const Submissions = () => {
                 setFile("");
                 setCourseName("");
                 setEditPost(false); // Reset edit mode
-                mutate("http://localhost:5000/api/assignment/getAssignment"); // Update the SWR cache
+                mutate("https://unishare-backend.vercel.app/api/assignment/getAssignment"); // Update the SWR cache
             setUploadProgress(0);
 
               }
@@ -267,7 +267,7 @@ const Submissions = () => {
 
                 // Store the download URL in your MongoDB database
                 const response = await axios.post(
-                  "http://localhost:5000/api/assignment/submitAssignment",
+                  "https://unishare-backend.vercel.app/api/assignment/submitAssignment",
                   {
                     course: courseName,
                     file: downloadURL, // Store the download URL, not the file name
@@ -283,7 +283,7 @@ const Submissions = () => {
                 setErrorMessage(""); // Clear any previous error messages
                 setCourseName("Select Course");
                 setFile("");
-                mutate("http://localhost:5000/api/assignment/getAssignment"); // https://unishare-backend.vercel.app/api/post/get
+                mutate("https://unishare-backend.vercel.app/api/assignment/getAssignment"); // https://unishare-backend.vercel.app/api/post/get
                 setUploadProgress(0);
               }
             );

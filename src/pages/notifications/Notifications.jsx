@@ -9,7 +9,7 @@ const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 const Notifications = () => {
   const { data, error } = useSWR(
-    "http://localhost:5000/api/post/get",
+    "https://unishare-backend.vercel.app/api/post/get",
     fetcher,
     { refreshInterval: 5000 } // Poll every 5 seconds
   ); // https://unishare-backend.vercel.app/api/post/get

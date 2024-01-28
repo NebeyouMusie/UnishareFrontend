@@ -12,7 +12,7 @@ const Notifications = () => {
   const location = useLocation();
   console.log(location)
   const { data, error, isLoading } = useSWR(
-    "http://localhost:5000/api/post/get",
+    "https://unishare-backend.vercel.app/api/post/get",
     fetcher
   ); // https://unishare-backend.vercel.app/api/post/get
   const { user } = useGlobalContext();

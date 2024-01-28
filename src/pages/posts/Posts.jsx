@@ -30,7 +30,7 @@ const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 const Posts = () => {
   const { data, error, isLoading } = useSWR(
-    "http://localhost:5000/api/post/get",
+    "https://unishare-backend.vercel.app/api/post/get",
     fetcher
   ); // https://unishare-backend.vercel.app/api/post/get
   const { user } = useGlobalContext();
@@ -130,7 +130,7 @@ const Posts = () => {
 
                 // Store the download URL in your MongoDB database
                 const response = await axios.put(
-                  `http://localhost:5000/api/post/update/${selectedPostId}`, // Replace with your actual update endpoint
+                  `https://unishare-backend.vercel.app/api/post/update/${selectedPostId}`, // Replace with your actual update endpoint
                   {
                     title,
                     description,
@@ -150,7 +150,7 @@ const Posts = () => {
                 setTitle("");
                 setDescription("");
                 setEditPost(false); // Reset edit mode
-                mutate("http://localhost:5000/api/post/get"); // Update the SWR cache
+                mutate("https://unishare-backend.vercel.app/api/post/get"); // Update the SWR cache
                 setUploadProgress(0);
               }
             );
@@ -195,7 +195,7 @@ const Posts = () => {
 
                 // Store the download URL in your MongoDB database
                 const response = await axios.post(
-                  "http://localhost:5000/api/post/add",
+                  "https://unishare-backend.vercel.app/api/post/add",
                   {
                     //https://unishare-backend.vercel.app/api/post/add
                     title,
@@ -214,7 +214,7 @@ const Posts = () => {
                 setErrorMessage(""); // Clear any previous error messages
                 setTitle("");
                 setDescription("");
-                mutate("http://localhost:5000/api/post/get"); // https://unishare-backend.vercel.app/api/post/get
+                mutate("https://unishare-backend.vercel.app/api/post/get"); // https://unishare-backend.vercel.app/api/post/get
                 setUploadProgress(0);
               }
             );

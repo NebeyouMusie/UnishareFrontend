@@ -32,16 +32,16 @@ const Sidebar = () => {
   useEffect(() => {
     const fetchAmount = async () => {
       try{
-        const response1 = await axios.get("http://localhost:5000/api/assignment/getAssignment");
+        const response1 = await axios.get("https://unishare-backend.vercel.app/api/assignment/getAssignment");
         console.log(response1);
         const filteredReceivedAmount = response1?.data.data.filter(post => post.course === user.others.course)?.length;
         setReceivedAmount(filteredReceivedAmount);
-        const response2 = await axios.get("http://localhost:5000/api/post/get");
+        const response2 = await axios.get("https://unishare-backend.vercel.app/api/post/get");
         console.log(response2);
         const filteredAssignmentAmount = response2?.data.data.filter(post => post.course === user.others.course)?.length;
         setNotificationAmount(filteredAssignmentAmount);
-        mutate("http://localhost:5000/api/assignment/getAssignment");
-        mutate("http://localhost:5000/api/post/get");
+        mutate("https://unishare-backend.vercel.app/api/assignment/getAssignment");
+        mutate("https://unishare-backend.vercel.app/api/post/get");
       }catch(err){
         console.log(err);
       }

@@ -10,7 +10,7 @@ const fetcher = (url) => axios.get(url).then((res) => res.data);
 
 const Received = () => {
   const { data, error, isLoading } = useSWR(
-    "http://localhost:5000/api/assignment/getAssignment",
+    "https://unishare-backend.vercel.app/api/assignment/getAssignment",
     fetcher
   ); // https://unishare-backend.vercel.app/api/post/get
   const { user } = useGlobalContext();
@@ -32,7 +32,7 @@ const Received = () => {
   // });
 
   useEffect(() => {
-    mutate("http://localhost:5000/api/assignment/getAssignment");
+    mutate("https://unishare-backend.vercel.app/api/assignment/getAssignment");
     localStorage.setItem("checkedPosts", JSON.stringify(checkedPosts));
     if (data && data.data) {
       const filteredData = data.data.filter(post => post.course === user.others.course);
